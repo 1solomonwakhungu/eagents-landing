@@ -30,6 +30,23 @@ module.exports = {
       maxWidth: {
         '2xl': '40rem',
       },
+      // Motion tokens from the shared transitions.dev scale (see src/styles/tailwind.css)
+      transitionDuration: {
+        stagger: 'var(--duration-stagger)',
+        micro: 'var(--duration-micro)',
+        quick: 'var(--duration-quick)',
+        fast: 'var(--duration-fast)',
+        medium: 'var(--duration-medium)',
+        slow: 'var(--duration-slow)',
+        'very-slow': 'var(--duration-very-slow)',
+      },
+      transitionTimingFunction: {
+        'smooth-out': 'var(--ease-smooth-out)',
+        bounce: 'var(--ease-bounce)',
+        'bounce-strong': 'var(--ease-bounce-strong)',
+        out: 'var(--ease-out)',
+        'in-out': 'var(--ease-in-out)',
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],

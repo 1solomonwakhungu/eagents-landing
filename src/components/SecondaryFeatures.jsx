@@ -99,7 +99,11 @@ const features = [
 function Feature({ feature, isActive, className, ...props }) {
   return (
     <div
-      className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')}
+      className={clsx(
+        className,
+        !isActive &&
+          'opacity-75 transition-opacity duration-medium ease-smooth-out hover:opacity-100 hover:duration-fast'
+      )}
       {...props}
     >
       <div
@@ -181,7 +185,7 @@ function FeaturesDesktop() {
                   static
                   key={feature.name}
                   className={clsx(
-                    'px-5 transition duration-500 ease-in-out [&:not(:focus-visible)]:focus:outline-none',
+                    'px-5 transition duration-fast ease-smooth-out [&:not(:focus-visible)]:focus:outline-none',
                     featureIndex !== selectedIndex && 'opacity-60'
                   )}
                   style={{ transform: `translateX(-${selectedIndex * 100}%)` }}

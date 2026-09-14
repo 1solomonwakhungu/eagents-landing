@@ -28,14 +28,14 @@ function MobileNavIcon({ open }) {
       <path
         d="M0 1H14M0 7H14M0 13H14"
         className={clsx(
-          'origin-center transition',
+          'origin-center transition duration-fast ease-in-out',
           open && 'scale-90 opacity-0'
         )}
       />
       <path
         d="M2 2L12 12M12 2L2 12"
         className={clsx(
-          'origin-center transition',
+          'origin-center transition duration-fast ease-in-out',
           !open && 'scale-90 opacity-0'
         )}
       />
@@ -55,10 +55,10 @@ function MobileNavigation() {
       <Transition.Root>
         <Transition.Child
           as={Fragment}
-          enter="duration-150 ease-out"
+          enter="duration-fast ease-smooth-out"
           enterFrom="opacity-0"
           enterTo="opacity-100"
-          leave="duration-150 ease-in"
+          leave="duration-quick ease-smooth-out"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
@@ -66,12 +66,12 @@ function MobileNavigation() {
         </Transition.Child>
         <Transition.Child
           as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0 scale-95"
+          enter="duration-fast ease-smooth-out"
+          enterFrom="opacity-0 scale-[var(--scale-medium)]"
           enterTo="opacity-100 scale-100"
-          leave="duration-100 ease-in"
+          leave="duration-quick ease-smooth-out"
           leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
+          leaveTo="opacity-0 scale-[var(--scale-tiny)]"
         >
           <Popover.Panel
             as="div"
